@@ -92,4 +92,49 @@ public class BasicController {
         model.addAttribute("param2", "data2");
         return "basic/link";
     }
+
+    //리터럴
+    @GetMapping("/literal")
+    public String literal(Model model) {
+        model.addAttribute("data", "Spring!");
+        return "basic/literal";
+    }
+
+    //연산
+    @GetMapping("/operation")
+    public String operation(Model model) {
+        model.addAttribute("nullData", null);
+        model.addAttribute("data", "Spring!");
+        return "basic/operation";
+    }
+
+    //속성 값 설정
+    @GetMapping("/attribute")
+    public String attribute(Model model) {
+        return "basic/attribute";
+    }
+
+    //반복
+    @GetMapping("/each")
+    public String each(Model model) {
+        addUsers(model);
+        return "basic/each";
+    }
+
+    //조건부 평가
+    @GetMapping("/condition")
+    public String condition(Model model) {
+        addUsers(model);
+        return "basic/condition";
+    }
+
+
+    private void addUsers(Model model) {
+        List<User> list = new ArrayList<>();
+        list.add(new User("UserA", 10));
+        list.add(new User("UserB", 20));
+        list.add(new User("UserC", 30));
+        model.addAttribute("users", list);
+    }
+
 }
