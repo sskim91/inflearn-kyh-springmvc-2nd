@@ -1,0 +1,19 @@
+GET http://localhost:8080/api/members/spring
+Accept: application/json
+
+###
+#예외 발생
+GET http://localhost:8080/api/members/ex
+Accept: application/json
+
+###
+GET http://localhost:8080/api/members/bad
+Accept: application/json
+
+###
+GET http://localhost:8080/api/members/user-ex
+Accept: application/json
+
+### text/html로 호출
+GET http://localhost:8080/api/members/user-ex
+Accept: text/html
